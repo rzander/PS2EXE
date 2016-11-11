@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCompiler", "PSCompiler\PSCompiler.csproj", "{E71487BB-8402-42F9-AACD-DE735AA45975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source", "Source\Source.csproj", "{F1634D82-3301-46C6-B207-2897971D4402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PS2EXE", "PS2EXE\PS2EXE.csproj", "{2EA68067-01B0-41E4-A705-CED02E9CA46C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E71487BB-8402-42F9-AACD-DE735AA45975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71487BB-8402-42F9-AACD-DE735AA45975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71487BB-8402-42F9-AACD-DE735AA45975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71487BB-8402-42F9-AACD-DE735AA45975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1634D82-3301-46C6-B207-2897971D4402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1634D82-3301-46C6-B207-2897971D4402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1634D82-3301-46C6-B207-2897971D4402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1634D82-3301-46C6-B207-2897971D4402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA68067-01B0-41E4-A705-CED02E9CA46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA68067-01B0-41E4-A705-CED02E9CA46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA68067-01B0-41E4-A705-CED02E9CA46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA68067-01B0-41E4-A705-CED02E9CA46C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

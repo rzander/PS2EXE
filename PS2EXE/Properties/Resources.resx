@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Assembly" xml:space="preserve">
+    <value>using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("PowerShell-Wrapper")]
+[assembly: AssemblyDescription("PowerShell2Exe")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Zander Tools")]
+[assembly: AssemblyProduct("PowerShell to EXE converter")]
+[assembly: AssemblyCopyright("Copyright ©  2016 by Roger Zander")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: ComVisible(false)]
+[assembly: Guid("2193048a-dcd5-433e-a2c0-28384b9ebad2")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>using System;
+using System.Text;
+using System.Management.Automation;
+using System.IO;
+using System.Collections.ObjectModel;
+using System.Reflection;
+using System.Resources;
+
+namespace Source
+{
+    class Program
+    {
+        static Int32 Main(string[] args)
+        {
+            string psCode = null;
+            try
+            {
+                Assembly _assembly = Assembly.GetExecutingAssembly();
+
+                var stream = _assembly.GetManifestResourceStream("Resources.resx");
+                var resourceData = new byte[] { };
+                using (var rr = new ResourceReader(stream))
+                {
+                    var resourceType = "";
+                    rr.GetResourceData("psCode.ps1", out resourceType, out resourceData);
+                }
+
+                psCode = Encoding.ASCII.GetString(resourceData, 1, resourceData.Length - 1);
+                string sOrigCode = psCode;
+                if (psCode[0]!=' ')
+                {
+                    psCode = psCode.Substring(1).Trim();
+                }
+                else
+                {
+                    psCode = psCode.Trim();
+                }
+
+                if (args.Length &gt; 0)
+                {
+                    psCode = "$args = @(\"" + string.Join("\",\"", args) + "\");\n" + psCode;
+                }
+                foreach (string sArg in args)
+                {
+                    if (sArg.ToLower() == "/debug")
+                    {
+                        Console.WriteLine(psCode);
+                        Console.WriteLine(((int)sOrigCode[0]).ToString());
+                    }
+                }
+            }
+            catch { }
+
+            var pOut = _RunPS(args, psCode);
+            if(pOut == null)
+            {
+                return 1;
+            }
+
+            return 0;
+                
+        }
+
+        public static Collection&lt;PSObject&gt; _RunPS(string[] args, string PSScript, string WorkingDir = "")
+        {
+            PowerShell PowerShellInstance = PowerShell.Create();
+
+            if (!string.IsNullOrEmpty(WorkingDir))
+            {
+                WorkingDir = Path.GetDirectoryName(WorkingDir);
+                //PSScript = "Set-Location -Path '" + WorkingDir + "';" + PSScript;
+            }
+
+            PowerShellInstance.AddScript(PSScript, false);
+            
+            
+
+            Collection&lt;PSObject&gt; PSOutput = PowerShellInstance.Invoke();
+            bool bError = false;
+            foreach (ErrorRecord err in PowerShellInstance.Streams.Error)
+            {
+                Console.WriteLine(err.ToString());
+                bError = true;
+
+            }
+
+            if(bError)
+            {
+                PSOutput = null;
+            }
+            return PSOutput;
+
+        }
+    }
+}</value>
+  </data>
+</root>
