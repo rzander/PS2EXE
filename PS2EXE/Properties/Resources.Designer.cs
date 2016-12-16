@@ -89,20 +89,20 @@ namespace PS2EXE.Properties {
         ///using System.Collections.ObjectModel;
         ///using System.Reflection;
         ///using System.Resources;
+        ///using System.Runtime.InteropServices;
+        ///using System.IO.Compression;
         ///
         ///namespace Source
         ///{
         ///    class Program
         ///    {
-        ///        static Int32 Main(string[] args)
-        ///        {
-        ///            string psCode = null;
-        ///            try
-        ///            {
-        ///                Assembly _assembly = Assembly.GetExecutingAssembly();
+        ///        [DllImport(&quot;kernel32.dll&quot;)]
+        ///        static extern IntPtr GetConsoleWindow();
         ///
-        ///                var stream = _assembly.GetManifestResourceStream(&quot;Resources.resx&quot;);
-        ///      [rest of string was truncated]&quot;;.
+        ///        [DllImport(&quot;user32.dll&quot;)]
+        ///        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        ///
+        ///        const int SW_ [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Source {
             get {

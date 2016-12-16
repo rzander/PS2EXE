@@ -132,8 +132,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("2193048a-dcd5-433e-a2c0-28384b9ebad2")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]</value>
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]</value>
   </data>
   <data name="Source" xml:space="preserve">
     <value>using System;
@@ -143,13 +143,29 @@ using System.IO;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Resources;
+using System.Runtime.InteropServices;
+using System.IO.Compression;
 
 namespace Source
 {
     class Program
     {
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
+
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        const int SW_HIDE = 0;
+        const int SW_SHOW = 5;
+
         static Int32 Main(string[] args)
         {
+            var handle = GetConsoleWindow();
+
+            // Hide
+            ShowWindow(handle, SW_HIDE);
+
             string psCode = null;
             try
             {
@@ -164,8 +180,9 @@ namespace Source
                 }
 
                 psCode = Encoding.ASCII.GetString(resourceData, 1, resourceData.Length - 1);
+
                 string sOrigCode = psCode;
-                if (psCode[0]!=' ')
+                if (psCode[0] != ' ')
                 {
                     psCode = psCode.Substring(1).Trim();
                 }
@@ -173,6 +190,8 @@ namespace Source
                 {
                     psCode = psCode.Trim();
                 }
+
+                psCode = Unzip(psCode);
 
                 if (args.Length &gt; 0)
                 {
@@ -189,14 +208,25 @@ namespace Source
             }
             catch { }
 
-            var pOut = _RunPS(args, psCode);
-            if(pOut == null)
+            try
             {
-                return 1;
+                var pOut = _RunPS(args, psCode);
+                if (pOut == null)
+                {
+                    return 1;
+                }
+
+                return 0;
+            }
+            catch(Exception ex)
+            {
+                ShowWindow(handle, SW_SHOW);
+                Console.WriteLine(ex.Message);
+                System.Threading.Thread.Sleep(30000);
             }
 
-            return 0;
-                
+            return 2;
+
         }
 
         public static Collection&lt;PSObject&gt; _RunPS(string[] args, string PSScript, string WorkingDir = "")
@@ -210,8 +240,8 @@ namespace Source
             }
 
             PowerShellInstance.AddScript(PSScript, false);
-            
-            
+
+
 
             Collection&lt;PSObject&gt; PSOutput = PowerShellInstance.Invoke();
             bool bError = false;
@@ -222,12 +252,61 @@ namespace Source
 
             }
 
-            if(bError)
+            if (bError)
             {
                 PSOutput = null;
             }
             return PSOutput;
 
+        }
+
+        //Zip-Unzip Source from: http://stackoverflow.com/questions/7343465/compression-decompression-string-with-c-sharp
+
+        public static void CopyTo(Stream src, Stream dest)
+        {
+            byte[] bytes = new byte[4096];
+
+            int cnt;
+
+            while ((cnt = src.Read(bytes, 0, bytes.Length)) != 0)
+            {
+                dest.Write(bytes, 0, cnt);
+            }
+        }
+
+        public static string Zip(string str)
+        {
+            var bytes = Encoding.UTF8.GetBytes(str);
+
+            using (var msi = new MemoryStream(bytes))
+            using (var mso = new MemoryStream())
+            {
+                using (var gs = new GZipStream(mso, CompressionMode.Compress))
+                {
+                    //msi.CopyTo(gs);
+                    CopyTo(msi, gs);
+                }
+
+                return Convert.ToBase64String(mso.ToArray());
+                //return mso.ToArray();
+            }
+        }
+
+        public static string Unzip(string str)
+        {
+            byte[] bytes = Convert.FromBase64String(str);
+
+            using (var msi = new MemoryStream(bytes))
+            using (var mso = new MemoryStream())
+            {
+                using (var gs = new GZipStream(msi, CompressionMode.Decompress))
+                {
+                    //gs.CopyTo(mso);
+                    CopyTo(gs, mso);
+                }
+
+                return Encoding.UTF8.GetString(mso.ToArray());
+            }
         }
     }
 }</value>
