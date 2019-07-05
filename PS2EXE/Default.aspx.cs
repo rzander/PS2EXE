@@ -69,6 +69,7 @@ namespace PS2EXE
             if (!oExe.Compile())
             {
                 //MessageBox.Show("Failed to create .Exe", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                sFilename.ToString();
             }
 
             //File.Delete(sResname);
