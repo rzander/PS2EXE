@@ -127,13 +127,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zander Tools")]
 [assembly: AssemblyProduct("PowerShell to EXE converter")]
-[assembly: AssemblyCopyright("Copyright ©  2016 by Roger Zander")]
+[assembly: AssemblyCopyright("Copyright ©  2019 by Roger Zander")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("2193048a-dcd5-433e-a2c0-28384b9ebad2")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]</value>
+[assembly: AssemblyVersion("1.0.1.1")]
+[assembly: AssemblyFileVersion("1.0.1.1")]</value>
   </data>
   <data name="Source" xml:space="preserve">
     <value>using System;

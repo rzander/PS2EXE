@@ -43,6 +43,14 @@ namespace PS2EXE
             string sFilename = Environment.ExpandEnvironmentVariables(Server.MapPath("~/App_Data/" + Path.GetRandomFileName().Split('.')[0] + ".exe"));
             //string sResname = Environment.ExpandEnvironmentVariables(Server.MapPath("~/App_Data/" + Path.GetRandomFileName().Split('.')[0]));
             //Directory.CreateDirectory(sResname);
+            if(!Directory.Exists(Server.MapPath("~/App_Data")))
+            {
+                try
+                {
+                    Directory.CreateDirectory(Server.MapPath("~/App_Data"));
+                }
+                catch { }
+            }
 
 
             //string sFilename = Environment.ExpandEnvironmentVariables(Server.MapPath("~/App_Data/" + tb_Filename.Text));

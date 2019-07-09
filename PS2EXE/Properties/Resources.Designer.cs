@@ -19,7 +19,7 @@ namespace PS2EXE.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -70,7 +70,7 @@ namespace PS2EXE.Properties {
         ///[assembly: AssemblyConfiguration(&quot;&quot;)]
         ///[assembly: AssemblyCompany(&quot;Zander Tools&quot;)]
         ///[assembly: AssemblyProduct(&quot;PowerShell to EXE converter&quot;)]
-        ///[assembly: AssemblyCopyright(&quot;Copyright ©  2016 by Roger Zander&quot;)]
+        ///[assembly: AssemblyCopyright(&quot;Copyright ©  2019 by Roger Zander&quot;)]
         ///[assembly: AssemblyTrademark(&quot;&quot;)]
         ///[assembly: AssemblyCulture(&quot;&quot;)]
         ///[assembly: ComVisible(fal [rest of string was truncated]&quot;;.
