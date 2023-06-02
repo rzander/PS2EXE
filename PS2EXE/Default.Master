@@ -34,9 +34,9 @@
     <meta name="description" content="Convert PowerShell scripts into Windows executables." />
     <meta name="keywords" content="Powershell, PoSh, compile, win32, exe, ps1, script" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="Scripts/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <script type="text/javascript" src="lib/jquery/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -47,14 +47,14 @@
         </asp:ScriptManager>
         <div class="container">
             <h1>PowerShell to EXE converter</h1>
-            <p class="text-muted"><sup>Version 1.1.0.3 (9.July.2019)</sup></p>
+            <p class="text-muted"><sup>Version 1.2.0.0 (2.June.2023)</sup></p>
         </div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </form>
     <footer class="rfooter">
-        <div class="container">
-            <p class="text-muted"><a href="https://github.com/rzander/PS2EXE/" title="PS2EXE on GitHub">PS2EXE on GitHub...</a> Copyright © 2019 by Roger Zander</p>
+        <div class="container pull-right">
+            <p class="text-muted"><a href="https://github.com/rzander/PS2EXE/" title="PS2EXE on GitHub">PS2EXE on GitHub...</a> Copyright © 2023 by Roger Zander</p>
         </div>
     </footer>
 </body>

@@ -127,13 +127,13 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zander Tools")]
 [assembly: AssemblyProduct("PowerShell to EXE converter")]
-[assembly: AssemblyCopyright("Copyright ©  2019 by Roger Zander")]
+[assembly: AssemblyCopyright("Copyright ©  2023 by Roger Zander")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("2193048a-dcd5-433e-a2c0-28384b9ebad2")]
-[assembly: AssemblyVersion("1.0.1.1")]
-[assembly: AssemblyFileVersion("1.0.1.1")]</value>
+[assembly: AssemblyVersion("1.0.1.2")]
+[assembly: AssemblyFileVersion("1.0.1.2")]</value>
   </data>
   <data name="Source" xml:space="preserve">
     <value>using System;
@@ -145,6 +145,7 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.IO.Compression;
+using System.Diagnostics;
 
 namespace Source
 {
@@ -161,10 +162,13 @@ namespace Source
 
         static Int32 Main(string[] args)
         {
-            var handle = GetConsoleWindow();
+            if (!string.IsNullOrEmpty(Process.GetCurrentProcess().MainWindowTitle))
+            {
+                var handle = GetConsoleWindow();
 
-            // Hide
-            ShowWindow(handle, SW_HIDE);
+                // Hide
+                ShowWindow(handle, SW_HIDE);
+            }
 
             string psCode = null;
             try
@@ -218,9 +222,16 @@ namespace Source
 
                 return 0;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                ShowWindow(handle, SW_SHOW);
+                if (!string.IsNullOrEmpty(Process.GetCurrentProcess().MainWindowTitle))
+                {
+                    var handle = GetConsoleWindow();
+
+                    // Hide
+                    ShowWindow(handle, SW_SHOW);
+                }
+
                 Console.WriteLine(ex.Message);
                 System.Threading.Thread.Sleep(30000);
             }
@@ -241,8 +252,6 @@ namespace Source
 
             PowerShellInstance.AddScript(PSScript, false);
 
-
-
             Collection&lt;PSObject&gt; PSOutput = PowerShellInstance.Invoke();
             bool bError = false;
             foreach (ErrorRecord err in PowerShellInstance.Streams.Error)
@@ -252,12 +261,22 @@ namespace Source
 
             }
 
+            if (!bError)
+            {
+                foreach(PSObject outputItem in PSOutput)
+                {
+                    if (outputItem != null)
+                    {
+                        Console.WriteLine(outputItem.BaseObject.ToString());
+                    }
+                }
+            }
+
             if (bError)
             {
                 PSOutput = null;
             }
             return PSOutput;
-
         }
 
         //Zip-Unzip Source from: http://stackoverflow.com/questions/7343465/compression-decompression-string-with-c-sharp

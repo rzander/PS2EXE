@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.Toolset.4.6.0\build\Microsoft.Net.Compilers.Toolset.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.Toolset.4.6.0\build\Microsoft.Net.Compilers.Toolset.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -15,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PS2EXE</RootNamespace>
     <AssemblyName>PS2EXE</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -49,17 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -74,37 +65,157 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.Master" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Images\powershell.ico" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="lib\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\jquery\jquery.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\jquery\jquery.slim.js" />
+    <Content Include="lib\jquery\jquery.slim.min.js" />
     <Content Include="packages.config" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="libman.json" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="lib\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.js.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="lib\bootstrap\scss\_accordion.scss" />
+    <Content Include="lib\bootstrap\scss\_alert.scss" />
+    <Content Include="lib\bootstrap\scss\_badge.scss" />
+    <Content Include="lib\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="lib\bootstrap\scss\_button-group.scss" />
+    <Content Include="lib\bootstrap\scss\_buttons.scss" />
+    <Content Include="lib\bootstrap\scss\_card.scss" />
+    <Content Include="lib\bootstrap\scss\_carousel.scss" />
+    <Content Include="lib\bootstrap\scss\_close.scss" />
+    <Content Include="lib\bootstrap\scss\_containers.scss" />
+    <Content Include="lib\bootstrap\scss\_dropdown.scss" />
+    <Content Include="lib\bootstrap\scss\_forms.scss" />
+    <Content Include="lib\bootstrap\scss\_functions.scss" />
+    <Content Include="lib\bootstrap\scss\_grid.scss" />
+    <Content Include="lib\bootstrap\scss\_helpers.scss" />
+    <Content Include="lib\bootstrap\scss\_images.scss" />
+    <Content Include="lib\bootstrap\scss\_list-group.scss" />
+    <Content Include="lib\bootstrap\scss\_maps.scss" />
+    <Content Include="lib\bootstrap\scss\_mixins.scss" />
+    <Content Include="lib\bootstrap\scss\_modal.scss" />
+    <Content Include="lib\bootstrap\scss\_nav.scss" />
+    <Content Include="lib\bootstrap\scss\_navbar.scss" />
+    <Content Include="lib\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="lib\bootstrap\scss\_pagination.scss" />
+    <Content Include="lib\bootstrap\scss\_placeholders.scss" />
+    <Content Include="lib\bootstrap\scss\_popover.scss" />
+    <Content Include="lib\bootstrap\scss\_progress.scss" />
+    <Content Include="lib\bootstrap\scss\_reboot.scss" />
+    <Content Include="lib\bootstrap\scss\_root.scss" />
+    <Content Include="lib\bootstrap\scss\_spinners.scss" />
+    <Content Include="lib\bootstrap\scss\_tables.scss" />
+    <Content Include="lib\bootstrap\scss\_toasts.scss" />
+    <Content Include="lib\bootstrap\scss\_tooltip.scss" />
+    <Content Include="lib\bootstrap\scss\_transitions.scss" />
+    <Content Include="lib\bootstrap\scss\_type.scss" />
+    <Content Include="lib\bootstrap\scss\_utilities.scss" />
+    <Content Include="lib\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="lib\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="lib\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="lib\bootstrap\scss\bootstrap.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="lib\bootstrap\scss\_variables-dark.scss" />
+    <Content Include="lib\bootstrap\scss\_variables.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="lib\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_color-bg.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_focus-ring.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_icon-link.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_stacks.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="lib\bootstrap\scss\helpers\_vr.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_backdrop.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_banner.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_color-mode.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="lib\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="lib\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="lib\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="lib\jquery\jquery.min.map" />
+    <Content Include="lib\jquery\jquery.slim.min.map" />
     <None Include="Resources\Icon1.ico" />
     <None Include="Properties\PublishProfiles\PS2EXE - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\PS2EXE - Web Deploy.pubxml" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,6 +245,7 @@
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
+    <None Include="FileName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -173,15 +285,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.1.1\build\Microsoft.Net.Compilers.props'))" />
-  </Target>
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.BinFix.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

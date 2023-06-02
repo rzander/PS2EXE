@@ -34,7 +34,9 @@ namespace PS2EXE
                 ShowMessage("PowerShell script cannot be empty.. !", MessageType.Error);
                 return;
             }
+
             string sPSTest = TestPowerShellSyntax(tb_PSSCript.Text);
+
             if (!string.IsNullOrEmpty(sPSTest))
             {
                 ShowMessage("Syntax Error:" + sPSTest, MessageType.Error);
@@ -69,6 +71,8 @@ namespace PS2EXE
             oExe.Sources.Add(Properties.Resources.Assembly);
 
             System.Resources.ResourceWriter writer = new System.Resources.ResourceWriter(sResname);
+            var a = Zip(tb_PSSCript.Text.Trim());
+            var b = Unzip(a);
             writer.AddResource("psCode.ps1", " " + Zip(tb_PSSCript.Text.Trim()));
             writer.Generate();
             writer.Close();
